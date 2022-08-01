@@ -1,6 +1,6 @@
 // import winston, { createLogger } from 'winston';
 import winston, { createLogger } from 'winston';
-import {Request} from "express";
+import { Request } from 'express';
 
 const { timestamp, combine, json, errors } = winston.format;
 
@@ -22,7 +22,8 @@ export const requestLogger = (req: Request) => {
         body: req.body,
         params: req.params,
         query: req.query,
+        accepted: req.accepted,
     });
-}
+};
 
 export default logger;
